@@ -1,0 +1,632 @@
+/* -------------------- SIDEBAR  ------------------------ */
+
+body {
+  background: white;
+  margin: 0;
+}
+
+.sidebar-container .sidebar-top h2 {
+  font-family: Avenir;
+  font-weight: 100;
+  color: #f2f2f2;
+}
+
+.sidebar-container .sidebar-links p {
+  font-family: Avenir;
+  margin-bottom: 0;
+  color: #0099ff;
+  margin-top: 0;
+  margin-left: 10px;
+  display: none;
+}
+
+.sidebar-container {
+  height: 100%;
+  width: 3%;
+  float: left;
+  background-color: #f2f2f2;
+  transition: 0.5s;
+}
+
+.sidebar-container .sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+}
+
+.sidebar-container .sidebar-top .close {
+  display: none;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  position: relative;
+  top: 3rem;
+}
+
+.sidebar-links img {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  margin-right: 0;
+  padding-top: 2px;
+}
+
+.sidebar-links a {
+  display: flex;
+  text-decoration: none;
+  height: 3.7rem;
+  transition: all 300ms ease;
+  margin-left: 8px;
+}
+
+.sidebar-links a:hover {
+  margin-left: 1rem;
+  color: #b3d1ff;
+}
+
+.sidebar-links p:hover {
+  margin-left: 1rem;
+  color: #b3d1ff;
+}
+
+#bottom-link {
+  position: absolute;
+  bottom: 2rem;
+}
+
+/* ----------------------------- MAIN DASHBOARD ----------------------------- */
+.right-container {
+  background-color: white;
+  height: 100%;
+  width: 21%;
+  float: right;
+  display: flex;
+  overflow: hidden;
+  display: block;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  float: center;
+  display: inline-flex;
+}
+
+.middle-container {
+  background-color: white;
+  width: 79%;
+  float: left;
+}
+
+.right-container table {
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px;
+  float: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.right-container td,
+th {
+  font-family: Avenir;
+  color: black;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.month {
+  color: #0099ff;
+  font-weight: 20;
+}
+
+#calendar {
+  height: 30%;
+  padding-left: 5%;
+  margin-bottom: 120px;
+}
+
+.right-container h3 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.notes-container {
+  background-color: blue;
+  margin-top: 30px;
+}
+
+/* -----------------------------dashboard stats ----------------------------- */
+
+.stats-container {
+  display: flex;
+  margin-left: 2%;
+}
+
+.container {
+  width: 45%;
+  height: 24%;
+  display: inline-block;
+  margin-right: 2%;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.stats-container h3 {
+  margin-left: 2%;
+  width: 5%;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+#container-1 {
+  background-color: #e6f3ff;
+  margin-left: 5%;
+}
+
+#container-2 {
+  background-color: #e6f3ff;
+}
+
+#container-3 {
+  background-color: #e6f3ff;
+  margin-left: 0%;
+}
+
+#container-4 {
+  background-color: #e6f3ff;
+}
+
+.stat-container-small {
+  display: inline-block;
+  margin: 0;
+  width: 48%;
+}
+
+.stat-container .container:last-child {
+  padding-right: 0;
+}
+
+.stat-container h3 {
+  padding-left: 3%;
+  font-family: "Poppins", sans-serif;
+}
+
+/* -----------------------------HEADER STUFF ----------------------------- */
+
+.header-block {
+  background-image: url("/static/img/header.jpg");
+  width: 100%;
+  height: 90%;
+}
+
+#seperator {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.login-buttons button {
+  text-decoration: none;
+  font-family: Avenir;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.login-buttons a {
+  text-decoration: none;
+  font-family: Avenir;
+  color: white;
+  font-size: 15px;
+}
+
+.header-toolbar p {
+  color: #0099ff;
+  display: inline;
+  float: right;
+}
+
+#bottom-link {
+  position: absolute;
+  margin: auto;
+}
+
+.bottom-links img {
+  position: absolute;
+  padding-bottom: 29px;
+}
+
+#main-header {
+  background-color: #00264d;
+  width: 100%;
+  height: 200px;
+}
+
+.main-header {
+  background-color: #00264d;
+}
+
+/* #red {
+  color: red;
+  background-color: yellow;
+} */
+
+#list-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.header-toolbar {
+  width: 100%;
+  height: 50px;
+  background-color: #f2f2f2;
+  /* background-color: white; */
+}
+
+/* APPT SECTION ON DASHBOARD */
+.appointment-container {
+  margin-left: 24px;
+  width: 100%;
+  margin-right: 0;
+  display: inline-block;
+}
+
+.appointment-container h3 {
+  /* text-align: center; */
+  padding-left: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+#appt-table {
+  width: 100%;
+  height: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+  border-collapse: collapse;
+}
+
+.appt-container1 {
+  width: 65%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.appt-container2 {
+  width: 25%;
+  display: inline-block;
+  margin-left: 1%;
+  height: 56%;
+  margin-top: 25px;
+  vertical-align: top;
+}
+
+.appt-container2 h3 {
+  margin: 0;
+}
+
+#appt-table tbody td {
+  border-bottom: 1px solid lightgray;
+  font-family: Avenir;
+  text-align: center;
+}
+
+#appt-table tbody tr:last-child {
+  border: none;
+}
+
+#appt-table tbody tr:hover {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info {
+  margin: 0;
+  background-color: white;
+  display: inline-block;
+  margin-top: 5%;
+  width: 100%;
+  height: 89%;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.patient-container {
+  display: inline-block;
+  width: 25%;
+}
+
+/* 500 and under */
+@media screen and (max-width: 780px) {
+  #appt-table {
+    background-color: pink;
+  }
+
+  .stat-container-small {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .middle-container {
+    width: 100%;
+  }
+
+  .appointment-container {
+    width: 90%;
+  }
+
+  #container-1 {
+    margin-left: 0;
+  }
+
+  .stats-container-small {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  #appt-table {
+    background-color: blue;
+  }
+
+  #container-1 {
+    margin-left: 0;
+  }
+
+  .stat-container-small {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .middle-container {
+    width: 100%;
+  }
+
+  .appointment-container {
+    width: 93%;
+  }
+
+  #container-1 {
+    margin-left: 3%;
+  }
+
+  #container-3 {
+    margin-left: 3%;
+  }
+
+  .signup-btn {
+    color: pink;
+  }
+}
+
+/* form stuff */
+
+.login-form label {
+  width: 100%;
+  font-family: Avenir;
+  margin-top: 20px;
+}
+
+.login-form label:first-child {
+  margin-top: 100px;
+}
+
+.form-container {
+  width: 40%;
+  height: 100%;
+  float: right;
+  /* background-color: pink; */
+}
+
+.text-container {
+  /* background-color: blue; */
+  height: 100%;
+  width: 60%;
+  float: left;
+}
+
+.text-container h1 {
+  font-size: 50px;
+  color: white;
+  font-family: Avenir;
+  font-weight: 100;
+  text-align: center;
+  overflow: auto;
+  margin-top: 23%;
+  margin-bottom: 0;
+}
+
+.text-container h3 {
+  font-size: 25px;
+  color: white;
+  font-family: Avenir;
+  font-weight: 100;
+  text-align: center;
+  overflow: auto;
+  margin-top: 0;
+  /* margin-top: 11%; */
+}
+
+.form {
+  width: 90%;
+  height: 90%;
+  /* background-color: #d6e0f5; */
+  margin: auto;
+  border-radius: 25px;
+  margin-top: 5%;
+  overflow: auto;
+}
+
+.form-outer {
+  width: 65%;
+  background-color: #e6e6e6;
+  height: 70%;
+  margin: auto;
+  margin-top: 15%;
+  border-radius: 25px;
+  overflow: auto;
+}
+
+.form-inner {
+  background-color: white;
+  border-radius: 25px;
+  height: 90%;
+}
+
+.form-buttons {
+  display: inline-block;
+  width: 100%;
+}
+
+.form-buttons button {
+  color: black;
+  font-family: Avenir;
+  font-size: 15px;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  width: 25%;
+  text-align: center;
+}
+
+.form-buttons button:first-child {
+  margin-left: 12%;
+  margin-right: 6%;
+  font-weight: bold;
+  border-bottom: 2px solid #0099ff;
+}
+
+label {
+  display: block;
+  font-family: Avenir;
+  color: #0099ff;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+input[type="text"] {
+  /* width: 90%; */
+  outline: 0;
+  border: 0;
+  margin-left: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+/* 
+input[type="radio"] {
+  width: 90%;
+  outline: 0;
+  border: 0;
+  margin-left: 10px;
+  border-bottom: 1px solid lightgrey;
+} */
+
+/* input[type="text"]:nth-child(4) {
+  width: 40%;
+} */
+
+/* .small input[type="text"] {
+  width: 40%;
+} */
+
+input[type="password"] {
+  width: 90%;
+  outline: 0;
+  border: 0;
+  margin-left: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.form-inner p {
+  font-family: Avenir;
+  color: #0099ff;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+input[type="radio"] {
+  display: inline-block;
+  margin-top: 7px;
+}
+
+.radio-box {
+  display: inline-block;
+  color: gray;
+  margin: 0;
+}
+
+#signup-btn {
+  border-radius: 25px;
+  width: 90%;
+  height: 10%;
+  background-color: #0099ff;
+  color: white;
+  border: none;
+  margin-left: 4%;
+  margin-top: 5%;
+}
+
+#signup-btn:hover {
+  background-color: #66b3ff;
+}
+
+.large {
+  width: 90%;
+}
+
+.small {
+  width: 30%;
+  display: inline-block;
+  margin: 0;
+}
+
+.medium {
+  width: 55%;
+}
+
+#age-label {
+  margin: 0;
+  width: 35%;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.small-label {
+  margin: 0;
+  width: 35%;
+  display: inline-block;
+  margin-left: 10px;
+  /* color: red; */
+}
+
+/* form media queries */
+@media screen and (max-width: 750px) {
+  .header-block {
+    height: 120%;
+  }
+
+  .form-container {
+    height: 60%;
+    width: 100%;
+    display: block;
+  }
+
+  .form-outer {
+    height: 70%;
+  }
+
+  .text-container {
+    height: 20%;
+    width: 100%;
+  }
+}

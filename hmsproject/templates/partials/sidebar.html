@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+    <head>   
+       <link href = "{% static 'css/main.css' %}" rel="stylesheet ">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+       <script src="{% static 'js/main.js' %}"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div class = "sidebar-container">
+            <div class = "sidebar-top">
+                <h2>HMSystem</h2>
+                <div class = "close">
+                    <img src = "{% static 'img/bootstrap/close.svg' %}" alt="placeholder" width="10px" height="10px">
+                </div>
+            </div>
+
+            <div class = "sidebar-links">
+                <a id = "link1" href = "/dashboard">
+                    <img src = "{% static 'img/bootstrap/grid.svg' %}" alt="placeholder" width="10px" height="10px">
+                    <p class = "link"> Dashboard</p></a>
+                
+                <a id = "link2" href = "/patients">
+                    <img src = "{% static 'img/bootstrap/person.svg' %}" alt="placeholder" width="10px" height="10px">
+                    <p class = "link">Patients</p>
+                </a>
+                <a id = "link3" href = "/dashboard">
+                    <img src = "{% static 'img/bootstrap/calendar.svg' %}" alt="placeholder" width="10px" height="10px">
+                    <p class = "link">Appointments</p></a>
+                <a id = "link4" href = "/prescriptions">
+                    <img src = "{% static 'img/bootstrap/prescription.svg' %}" alt="placeholder" width="10px" height="10px">
+                    <p class = "link">Prescriptions</p></a>
+
+                    <div id = "bottom-link">
+                        <a href = "/logout">
+                            <img src = "{% static 'img/bootstrap/logout.svg' %}" alt="placeholder" width="10px" height="10px">
+                            <p>Logout</p>
+                    </div>
+                </a>
+            </div>       
+        </div>
+    </body>
+</html>
