@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'partials/header.html' %}
+<div class = "main-container">
+    
+    {% include 'partials/sidebar.html' %}
+    <div class = "middle-container">
+       <div class = "stat-container">
+        <!-- load this info dynamically -->
+            <h3>Welcome, name!</h3> 
+            <div class = "stat-container-small">
+                <div id = "container-1" class = "container">
+                    <h3>Beds Available: </h3>
+                    <h1>6/10</h1></p>
+                </div>
+    
+                <div id = "container-2" class = "container">
+                    <h3>Total Patients: </h3>
+                    <h1>210</h1></p>
+                </div>
+            </div>
+            
+            <div class = "stat-container-small">
+                <div id = "container-3" class = "container">
+                    <h3>Total Appointments: </h3>
+                    <h1>1201</h1></p>
+                    
+                </div>
+    
+                <div id = "container-4" class = "container">
+                    <h3>Finished Appts:</h3>
+                    <h1>912</h1></p>
+                </div>
+            </div>
+
+            
+       </div>
+
+       <div class = "appointment-container">
+            <div class = "appt-container1">
+                    <h3>Upcoming Appointments</h3>
+                <table id = "appt-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Patient Name</th>
+                            <th>Appointment Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>07/25/2023</td>
+                            <td>12:00pm</td>
+                            <td>Jane Doe</td>
+                            <td>Sore throat</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>07/25/2023</td>
+                            <td>12:00pm</td>
+                            <td>Jane Doe</td>
+                            <td>Sore throat</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>07/25/2023</td>
+                            <td>12:00pm</td>
+                            <td>Jane Doe</td>
+                            <td>Sore throat</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>07/25/2023</td>
+                            <td>12:00pm</td>
+                            <td>Jane Doe</td>
+                            <td>Sore throat</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>07/25/2023</td>
+                            <td>12:00pm</td>
+                            <td>Jane Doe</td>
+                            <td>Sore throat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class = "appt-container2">
+            
+                <!-- <p>container 2</p> -->
+                <h3>Upcoming Patient Info: </h3>
+               
+                <div class = "info">
+                    <p>Name:</p>
+                </div>
+
+
+            </div>
+        
+
+
+        <!-- <div class = "patient-container">
+
+            <h3>Upcoming Patient Info: </h3>
+            <div class = "patient-info">
+    
+                <p>Patient Name: </p>
+            </div>
+            
+            
+           </div> -->
+
+       </div>
+
+     
+
+
+        
+    </div>
+
+    <div class = "right-container">
+        <div id = "calendar">
+            <h3>Calendar</h3>
+            <p>{{cal | safe}}</p>
+        </div>
+
+        
+        <div id = "notes-container">
+            <h3>Notes</h3>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
