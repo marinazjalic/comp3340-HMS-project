@@ -21,17 +21,24 @@
             <div class = "form-outer">
                 <div class = "form-buttons">
 
-                <button id = "register-btn">Register</button>
-                <button id = "signin-btn">Sign In</button>
+                <button id = "register-btn" onClick = "clickRegisterBtn()">Register</button>
+                <button id = "signin-btn" onClick = "clickSignUpBtn()">Sign In</button>
                 </div>
                 <form class = "form-inner">
+                    <p>Select Role: </p>
+                    <input type="radio" id="patient" name="role" value="patient" onClick = "patientSelected()">
+                    <label class = "radio-box" for="patient">Patient</label>
+                    <input type="radio" id="doctor" name="role" value="doctor" onClick = "doctorSelected()">
+                    <label class = "radio-box" for="doctor">Doctor</label>
+
+
                     <br>
                     <label for = "fname">Full Name</label>
                     <input class="large" type = "text" id = "fname" name = "fname">
                     <br>
                     <div class = "optional">
-                        <label for = "lname">Address</label>
-                    <input class="large" type = "text" id = "lname" name = "lname">
+                        <label for = "address">Address</label>
+                    <input class="large" type = "text" id = "address" name = "address">
                     <br>
                     <p>Gender: </p>
                     <input type="radio" id="male" name="gender" value="male">
@@ -42,24 +49,22 @@
                     <label class = "radio-box" for="other">Other</label>
                     <br>
 
-                    <label class = "small-label" for = "phone">Phone</label>
-                    <label class ="small-label" for = "age">Age</label>
+                    <label class = "phone-label" for = "phone">Phone</label>
+                    <label class ="age-label" for = "age">Age</label>
                     <input class="medium" type = "text" id = "phone" name = "phone">
                     <input class = "small" type = "text" id = "age" name = "age">
 
+                    <label for = "bday">D.O.B</label>
+                    <input class="large" type = "text" id = "bday" name = "bday">
 
-                    </div>
-                    
 
-                    <!-- <label id ="age-label" for = "age">Age</label> -->
-                    <!-- <input type="radio" id="other" name="gender" value="other">
-                    <label class = "radio-box" for="other">Patient</label>
-                    <input type="radio" id="other" name="gender" value="other">
-                    <label class = "radio-box" for="other">Doctor</label> -->
-                    <!-- <input class = "small" type = "text" id = "age" name = "age"> -->
-
+                    </div>             
                     <label for = "pass">Password: </label>
                     <input class="large" type = "password" id = "pass" name = "pass">
+
+                    
+
+                    
 
                     <button id = "signup-btn">Register</button>
         

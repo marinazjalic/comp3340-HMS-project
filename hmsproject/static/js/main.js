@@ -1,12 +1,17 @@
 var toggled = false;
 var linkIds = ["link1", "link2", "link3", "link4"];
 
-window.onload = function (e) {
-  var button = document.getElementById("register-btn");
-  var login_btn = document.getElementById("signin-btn");
-  button.addEventListener("click", clickRegisterBtn);
-  login_btn.addEventListener("click", clickSignUpBtn);
-};
+var registerSelected = true;
+
+// window.onload = function (e) {
+//   var button = document.getElementById("register-btn");
+//   var login_btn = document.getElementById("signin-btn");
+//   var note_btn = document.getElementById("note-btn");
+//   button.addEventListener("click", clickRegisterBtn);
+//   login_btn.addEventListener("click", clickSignUpBtn);
+//   note_btn.addEventListener("click", addNewNote);
+// };
+
 function openNav() {
   var menu = document.getElementsByClassName("sidebar-container")[0];
   var middle_container = document.getElementsByClassName("middle-container")[0];
@@ -54,6 +59,7 @@ function clickRegisterBtn() {
 
   reg_btn.style.fontWeight = "bold";
   reg_btn.style.borderBottom = "2px solid #0099ff";
+  registerSelected = true;
   resetButtonStyle(login_btn);
 }
 
@@ -68,10 +74,48 @@ function clickSignUpBtn() {
   var form = document.getElementsByClassName("optional")[0];
 
   form.style.display = "none";
+  registerSelected = false;
   resetButtonStyle(reg_btn);
 }
 
 function resetButtonStyle(resetBtn) {
   resetBtn.style.fontWeight = "normal";
   resetBtn.style.borderBottom = "none";
+}
+
+function addNewNote() {
+  console.log("reached");
+  var table = document.getElementById("notes-table");
+  var form = document.getElementById("note-input");
+  var formRow = document.getElementById("form-row");
+  formRow.style.display = "block";
+  form.style.display = "block";
+}
+
+function focusOutFunc() {
+  console.log("focus out");
+  var table = document.getElementById("notes-table");
+  var form = document.getElementById("note-input");
+
+  //get user input, clear form and hide
+  var noteVal = document.getElementById("note-input").value;
+  form.value = "";
+  form.style.display = "none";
+
+  var row = table.insertRow(1);
+  var cell = row.insertCell(0);
+
+  cell.innerHTML = noteVal;
+}
+
+function patientSelected() {
+  if (registerSelected) {
+    var form = document.getElementsByClassName("optional")[0];
+    form.style.display = "inline-block";
+  }
+}
+
+function doctorSelected() {
+  var form = document.getElementsByClassName("optional")[0];
+  form.style.display = "none";
 }

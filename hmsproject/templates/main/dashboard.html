@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -8,30 +9,54 @@
     {% include 'partials/sidebar.html' %}
     <div class = "middle-container">
        <div class = "stat-container">
-        <!-- load this info dynamically -->
-            <h3>Welcome, name!</h3> 
+        <!-- load this info dynamically based on who's logged in-->     
+            <h3 id = "welcome-text">Welcome, name!</h3> 
             <div class = "stat-container-small">
+
+                <!-- make stats info dynamic: -->
                 <div id = "container-1" class = "container">
-                    <h3>Beds Available: </h3>
-                    <h1>6/10</h1></p>
+                    <h3>Rooms Available</h3>
+                    <div class = "inner-container">
+                        <div id = "icon-1" class = "icon-container">
+                            <img id = "stat-icon" src = "{% static 'img/bootstrap/room.svg' %}" alt="placeholder" width="10px" height="10px">
+                        </div>
+                        <h3 id = "stat-text">2/10</h3>               
+                    </div>
                 </div>
     
                 <div id = "container-2" class = "container">
-                    <h3>Total Patients: </h3>
-                    <h1>210</h1></p>
+                    <h3>Appointments Today</h3>
+                    <div class = "inner-container">
+                        <div id = "icon-2" class = "icon-container">
+                            <img id = "stat-icon" src = "{% static 'img/bootstrap/appt-today.svg' %}" alt="placeholder" width="10px" height="10px">
+                        </div>
+                        <!-- this number should be equiv to number of rows in appt table -->
+                        <h3 id = "stat-text">14</h3>                   
+                    </div>
                 </div>
             </div>
             
             <div class = "stat-container-small">
                 <div id = "container-3" class = "container">
-                    <h3>Total Appointments: </h3>
-                    <h1>1201</h1></p>
-                    
+                    <h3>Total Patients</h3>
+                    <div class = "inner-container">
+                        <div id = "icon-3" class = "icon-container">
+                            <img id = "stat-icon" src = "{% static 'img/bootstrap/people.svg' %}" alt="placeholder" width="10px" height="10px">
+                        </div>
+                        <!-- this num should be the total num of patients in the DB -->
+                        <h3 id = "stat-text">912</h3>                       
+                    </div>                    
                 </div>
     
                 <div id = "container-4" class = "container">
-                    <h3>Finished Appts:</h3>
-                    <h1>912</h1></p>
+                    <h3>Total Doctors</h3>
+                    <div class = "inner-container">
+                        <div id = "icon-4"  class = "icon-container">
+                            <img id = "stat-icon" src = "{% static 'img/bootstrap/heart.svg' %}" alt="placeholder" width="10px" height="10px">
+                        </div>
+                        <!-- this num should be the total num of doctors in the DB -->
+                        <h3 id = "stat-text">28</h3>   
+                    </div>
                 </div>
             </div>
 
@@ -39,107 +64,73 @@
        </div>
 
        <div class = "appointment-container">
-            <div class = "appt-container1">
-                    <h3>Upcoming Appointments</h3>
-                <table id = "appt-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Patient Name</th>
-                            <th>Appointment Reason</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>07/25/2023</td>
-                            <td>12:00pm</td>
-                            <td>Jane Doe</td>
-                            <td>Sore throat</td>
-                        </tr>
-                    </tbody>
+            <div class = "table-container">
+                    <h3>Today's Appointments</h3>
 
-                    <tbody>
-                        <tr>
-                            <td>07/25/2023</td>
-                            <td>12:00pm</td>
-                            <td>Jane Doe</td>
-                            <td>Sore throat</td>
-                        </tr>
-                    </tbody>
+                    <!-- need to load all appointments in the DB and sort by todays date -->
+                    <div class = "table-wrapper">
+                        <table id = "table-appt">
+                            <tr id = "patient-appt">
+                                <td class = "patient-name">Name</td>
+                                <td class = "appt-time">12:00</td>
+                                <td class= "appt-reason">Medical Examination</td>
 
-                    <tbody>
-                        <tr>
-                            <td>07/25/2023</td>
-                            <td>12:00pm</td>
-                            <td>Jane Doe</td>
-                            <td>Sore throat</td>
-                        </tr>
-                    </tbody>
+                            </tr>
+                            <tr id = "patient-appt">
+                                <td class = "patient-name">Name</td>
+                                <td class = "appt-time">12:00</td>
+                                <td class= "appt-reason">Medical Examination</td>
+                            </tr>
+                            <tr id = "patient-appt">
+                                <td class = "patient-name">Name</td>
+                                <td class = "appt-time">12:00</td>
+                                <td class= "appt-reason">Medical Examination</td>
 
-                    <tbody>
-                        <tr>
-                            <td>07/25/2023</td>
-                            <td>12:00pm</td>
-                            <td>Jane Doe</td>
-                            <td>Sore throat</td>
-                        </tr>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>07/25/2023</td>
-                            <td>12:00pm</td>
-                            <td>Jane Doe</td>
-                            <td>Sore throat</td>
-                        </tr>
-                    </tbody>
-                </table>
+                            </tr>
+                            <tr id = "patient-appt">
+                                <td class = "patient-name">Name</td>
+                                <td class = "appt-time">12:00</td>
+                                <td class= "appt-reason">Medical Examination</td>
+                            </tr>
+                        </table>
+                    </div>
             </div>
             
             <div class = "appt-container2">
-            
-                <!-- <p>container 2</p> -->
-                <h3>Upcoming Patient Info: </h3>
-               
-                <div class = "info">
-                    <p>Name:</p>
+                <h3 id = "patient-heading">Patient Info</h3>
+                <div class = "patient-container">
+                    <!-- dynamic patient info here -->
+                    <!-- initially populate with first row in appt table, but change info based on row clicked -->
                 </div>
-
-
             </div>
-        
-
-
-        <!-- <div class = "patient-container">
-
-            <h3>Upcoming Patient Info: </h3>
-            <div class = "patient-info">
-    
-                <p>Patient Name: </p>
-            </div>
-            
-            
-           </div> -->
-
-       </div>
-
-     
-
-
-        
+       </div>  
     </div>
+
+
 
     <div class = "right-container">
         <div id = "calendar">
-            <h3>Calendar</h3>
+            <!-- <h3>Calendar</h3> -->
             <p>{{cal | safe}}</p>
         </div>
 
         
         <div id = "notes-container">
-            <h3>Notes</h3>
-        </div>
+            <h3 id = "notes-heading">Notes</h3>
+            <button id = "note-btn" onClick = "addNewNote()">
+                <img id = "plus-icon" src = "{% static 'img/bootstrap/new.svg' %}" alt="placeholder" width="10px" height="10px">
+            </button>
+            <div class = "note-wrapper">
+                <table id = "notes-table">
+                    <tr id ="form-row">
+                        <td>
+                            <input id = "note-input" type = "text" id = "note" onblur = "focusOutFunc()"/>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
         
     </div>
 </div>
