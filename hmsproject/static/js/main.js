@@ -37,6 +37,13 @@ window.onload = function (e) {
     cancelButtons.forEach((button) => {
       button.addEventListener("click", cancelAppointment);
     });
+
+    var search_bar = document.getElementById("search-appts");
+    search_bar.addEventListener("keypress", function (event) {
+      if (event.key == "Enter") {
+        searchApptTable();
+      }
+    });
   }
 
   if (currentPath == "/patientView/") {
@@ -348,7 +355,7 @@ function searchPatientTable() {
   var input = document.getElementById("search-input").value;
   var table = document.getElementById("all-patients");
   var rows = table.children[0].rows;
-  let nameArr = new Array();
+  //   let nameArr = new Array();
 
   if (input != "") {
     for (let i = 0; i < rows.length; i++) {
@@ -363,6 +370,40 @@ function searchPatientTable() {
   } else {
     for (i = 0; i < rows.length; i++) {
       rows[i].style.display = "table-row";
+    }
+  }
+}
+
+function searchApptTable() {
+  var upcoming_table = document.getElementById("upcoming-appt");
+  var rows = upcoming_table.children[0].rows;
+  var name_input = document.getElementById("search-appts").value;
+
+  var pending_table = document.getElementById("pending-appts");
+  var pending_rows = pending_table.children[0].rows;
+
+  if (name_input != "") {
+    //filter upcoming appt table
+    for (let i = 0; i < rows.length; i++) {
+      var value = rows[i].cells[0].firstChild.data;
+      if (value != name_input && !value.includes(name_input)) {
+        rows[i].style.display = "none";
+      }
+    }
+    //filtering pending appt table
+    for (let j = 0; j < pending_rows.length; j++) {
+      var value = pending_rows[j].cells[0].firstChild.data;
+      if (value != name_input && !value.includes(name_input)) {
+        pending_rows[j].style.display = "none";
+      }
+    }
+  } else {
+    for (let i = 0; i < rows.length; i++) {
+      rows[i].style.display = "table-row";
+    }
+
+    for (let i = 0; i < pending_rows.length; i++) {
+      pending_rows[i].style.display = "table-row";
     }
   }
 }
