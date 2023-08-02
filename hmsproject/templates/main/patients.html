@@ -33,31 +33,27 @@
                     <p class = "info-text">Windsor, ON, Canada</p>
 
                     <p class = "info-heading">Family Doctor</p>
-                    <p class = "info-text">Dr. Jane Smith</p>
+                    <p class = "info-text" id = "patient-doctor">Dr. Jane Smith</p>
                     <p class = "info-text">1111 Tecumseh Rd.</p>
                     <p class = "info-text">Windsor, ON</p>
                 </div>
 
                 <div class = "right-info">
                     <p class = "info-heading">Personal Information </p>
-                    <p class = "info-text">D.O.B: </p>
+                    <p class = "info-text" id = "patient-dob">D.O.B: </p>
                     <p class = "info-text">Gender: </p>
                     <p class = "info-text">Weight: </p>
                     <p class = "info-text">Age: </p>
                     <p class = "info-text">Health Card Number: </p>
                 </div>
-                
-
-
             </div>
-
         </div>
 
         <div class = "search-container">
             <div id = "search-bar">
                 <img id = "search-icon" src = "{% static 'img/bootstrap/search.svg' %}" alt="placeholder" width="10px" height="10px">
                 <input class = "search" type = "text" placeholder = "Search Patients...">
-        </div>
+            </div>
         </div>
 
 
@@ -71,11 +67,37 @@
                         <th>Family Doctor</th>
                         <th>D.O.B</th> 
                     </tr>
+                    <tr class = "patient-info-row" id = "row1">
+                        <td id = "name-patient">Michael Smith</td>
+                        <td id = "last-visit">12/02/22</td>
+                        <td id = "patient-doc">Dr. Brown</td></tf>
+                        <td id = "patient-bday">05/23/1970</td>
+                    </tr>
+
                     <tr class = "patient-info-row">
-                        <td>Name</td>
-                        <td>08/22/22</td>
-                        <td>Dr. Brown</td></tf>
-                        <td>02/19/1999</td>
+                        <td id = "name-patient">Dennis Anderson</td>
+                        <td id = "last-visit">05/12/23</td>
+                        <td id = "patient-doc">Dr. Jones</td></tf>
+                        <td id = "patient-bday">02/19/1984</td>
+                    </tr>
+
+                    <tr class = "patient-info-row">
+                        <td id = "name-patient">Emma Miller</td>
+                        <td id = "last-visit">08/22/22</td>
+                        <td id = "patient-doc">Dr. Harris</td></tf>
+                        <td id = "patient-bday">02/19/1999</td>
+                    </tr>
+                    <tr class = "patient-info-row">
+                        <td id = "name-patient">Marcus Moore </td>
+                        <td id = "last-visit">11/23/22</td>
+                        <td id = "patient-doc">Dr. Martinez</td></tf>
+                        <td id = "patient-bday">04/12/1997</td>
+                    </tr>
+                    <tr class = "patient-info-row">
+                        <td id = "name-patient">Simon Parker </td>
+                        <td id = "last-visit">09/22/22</td>
+                        <td id = "patient-doc">Dr. Brown</td></tf>
+                        <td id = "patient-bday">01/30/1992</td>
                     </tr>
                 </table>
             </div>
@@ -108,7 +130,7 @@
                         </div>
                         <div class = "one-line">
                             <input type = "text" id = "fname" name = "fname">
-                            <input type = "text" id = "lname" name = "lname">
+                            <input class = "lastName" type = "text" id = "lname" name = "lname">
                         </div>
                         <div class = "one-line">
                             <label for = "bday">D.O.B </label>
@@ -159,15 +181,7 @@
                 </form>
             </div>
         </div>
-
-
     </div>
-
-
-
-
-
-
 </div>
 
 
