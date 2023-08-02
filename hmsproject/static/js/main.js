@@ -63,6 +63,13 @@ window.onload = function (e) {
 
     var import_btn = document.getElementById("import-btn");
     import_btn.addEventListener("click", importPatientInfo);
+
+    var search_bar = document.getElementById("search-input");
+    search_bar.addEventListener("keypress", function (event) {
+      if (event.key == "Enter") {
+        searchPatientTable();
+      }
+    });
   }
 };
 
@@ -316,6 +323,11 @@ function importPatientInfo() {
   var lname_field = document.getElementsByClassName("lastName")[0];
   var bday_field = document.getElementById("bday");
   var date_field = document.getElementById("date");
+  var patient_addr = document.getElementById("addr_field").innerHTML;
+  var patient_city = document.getElementById("patient_city").innerHTML;
+  var addr_field = document.getElementById("address");
+  var city_field = document.getElementById("patientcity");
+
   const date = new Date();
   let day = date.getDate();
   let month = date.getMonth() + 1;
@@ -327,4 +339,30 @@ function importPatientInfo() {
   lname_field.value = patient_name[1];
   bday_field.value = patient_dob[1];
   date_field.value = todays_date;
+  addr_field.value = patient_addr;
+  city_field.value = patient_city;
+}
+
+function searchPatientTable() {
+  var i;
+  var input = document.getElementById("search-input").value;
+  var table = document.getElementById("all-patients");
+  var rows = table.children[0].rows;
+  let nameArr = new Array();
+
+  if (input != "") {
+    for (let i = 0; i < rows.length; i++) {
+      if (rows[i].className != "patient-table-header") {
+        var value = rows[i].cells[0].firstChild.data;
+
+        if (value != input && !value.includes(input)) {
+          rows[i].style.display = "none";
+        }
+      }
+    }
+  } else {
+    for (i = 0; i < rows.length; i++) {
+      rows[i].style.display = "table-row";
+    }
+  }
 }
