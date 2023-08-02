@@ -48,6 +48,22 @@ window.onload = function (e) {
     var register_btn = document.getElementById("signup-btn");
     register_btn.addEventListener("click", launchViewByRole);
   }
+
+  if (currentPath == "/patients/") {
+    var rows = document.getElementById("all-patients").children[0].rows;
+    var rowData = Array.prototype.slice.call(rows);
+
+    rowData.forEach((row) => {
+      if (row.className == "patient-info-row") {
+        row.addEventListener("click", function () {
+          patientRowClicked(this);
+        });
+      }
+    });
+
+    var import_btn = document.getElementById("import-btn");
+    import_btn.addEventListener("click", importPatientInfo);
+  }
 };
 
 function openNav() {
@@ -260,4 +276,55 @@ function launchViewByRole() {
   } else {
     window.location = "/dashboard";
   }
+}
+
+function patientRowClicked(tableRow) {
+  var name, doctor, bday;
+
+  var tableData = Array.prototype.slice.call(
+    tableRow.getElementsByTagName("td")
+  );
+
+  tableData.forEach((td) => {
+    if (td.id == "name-patient") {
+      name = td.innerHTML;
+    }
+    if (td.id == "patient-doc") {
+      doctor = td.innerHTML;
+    }
+    if (td.id == "patient-bday") {
+      bday = td.innerHTML;
+    }
+  });
+
+  var name_heading = document.getElementById("name-heading");
+  var bday_info = document.getElementById("patient-dob");
+  var patient_doc = document.getElementById("patient-doctor");
+  name_heading.innerText = name;
+  bday_info.innerText = "D.O.B: " + bday;
+  patient_doc.innerText = doctor;
+}
+
+function importPatientInfo() {
+  var patient_name = document
+    .getElementById("name-heading")
+    .innerHTML.split(" ");
+
+  var patient_dob = document.getElementById("patient-dob").innerHTML.split(" ");
+
+  var fname_field = document.getElementById("fname");
+  var lname_field = document.getElementsByClassName("lastName")[0];
+  var bday_field = document.getElementById("bday");
+  var date_field = document.getElementById("date");
+  const date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  var todays_date = month + "/" + day + "/" + year;
+
+  fname_field.value = patient_name[0];
+  lname_field.value = patient_name[1];
+  bday_field.value = patient_dob[1];
+  date_field.value = todays_date;
 }
