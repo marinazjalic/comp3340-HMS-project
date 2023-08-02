@@ -69,26 +69,26 @@
 
                     <!-- need to load all appointments in the DB and filter by todays date -->
                     <div class = "table-wrapper">
-                        <table class = "table-appt">
+                        <table class = "table-appt" id = "todays-appts">
                             <tr id = "patient-appt">
-                                <td class = "patient-name">Jenna Smith</td>
+                                <td class = "patient-name" id = "full-name">Jenna Smith</td>
                                 <td class = "appt-time">12:00pm</td>
                                 <td class= "appt-reason">Medical Examination</td>
 
                             </tr>
                             <tr id = "patient-appt">
-                                <td class = "patient-name">Bob Brown</td>
+                                <td class = "patient-name" id = "full-name">Bob Brown</td>
                                 <td class = "appt-time">9:30am</td>
                                 <td class= "appt-reason">Blood work</td>
                             </tr>
                             <tr id = "patient-appt">
-                                <td class = "patient-name">Robert Jefferson</td>
+                                <td class = "patient-name" id = "full-name">Robert Jefferson</td>
                                 <td class = "appt-time">8:45am</td>
                                 <td class= "appt-reason">Reoccuring Migrane</td>
 
                             </tr>
                             <tr id = "patient-appt">
-                                <td class = "patient-name">Jessica Green</td>
+                                <td class = "patient-name" id = "full-name">Jessica Green</td>
                                 <td class = "appt-time">10:45am</td>
                                 <td class= "appt-reason">Abdominal Pain</td>
                             </tr>
@@ -101,6 +101,26 @@
                 <div class = "patient-container">
                     <!-- dynamic patient info here -->
                     <!-- initially populate with first row in appt table, but change info based on row clicked -->
+                    <img id = "profile-pic-large" src = "{% static 'img/profile-pic.png' %}" alt="placeholder" width="10px" height="10px">
+                    <p id = "name-heading">Patient Name</p>
+                    <hr>
+                    <div class = "appt-details">
+                        <p>Appointment Duration: </p>
+                        <p>Appointment Reason: </p>
+                        <p>Patient Notes: </p>
+                        <br>
+                        <br>
+                        <button class = "contact-btn" id = "call-btn">
+                            <img id = "phone-icon" src = "{% static 'img/bootstrap/phone.svg' %}" alt="placeholder" width="10px" height="10px">
+                            <p class = "contact-text">(226) 333-1234</p>
+                            </button>
+                        <button class = "contact-btn" id = "email-btn">
+                            <img id = "phone-icon" src = "{% static 'img/bootstrap/mail.svg' %}" alt="placeholder" width="10px" height="10px">
+                            <p class = "contact-text">patient@gmail.com</p>
+                        </button>
+                    </div>
+                    
+                    
                 </div>
             </div>
        </div>  
