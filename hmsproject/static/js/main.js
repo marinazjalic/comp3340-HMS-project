@@ -8,12 +8,6 @@ var patientLogin = true;
 
 window.onload = function (e) {
   currentPath = window.location.pathname;
-  //   var button = document.getElementById("register-btn");
-  //   var login_btn = document.getElementById("signin-btn");
-  //   var note_btn = document.getElementById("note-btn");
-  //   button.addEventListener("click", clickRegisterBtn);
-  //   login_btn.addEventListener("click", clickSignUpBtn);
-  //   note_btn.addEventListener("click", addNewNote);
 
   if (currentPath == "/appointments/") {
     var denyButtons = Array.prototype.slice.call(
@@ -75,6 +69,19 @@ window.onload = function (e) {
     search_bar.addEventListener("keypress", function (event) {
       if (event.key == "Enter") {
         searchPatientTable();
+      }
+    });
+  }
+
+  if (currentPath == "/dashboard/") {
+    var rows = document.getElementById("todays-appts").children[0].rows;
+    var rowData = Array.prototype.slice.call(rows);
+
+    rowData.forEach((row) => {
+      if (row.id == "patient-appt") {
+        row.addEventListener("click", function () {
+          todaysPatientRowClicked(this);
+        });
       }
     });
   }
@@ -406,4 +413,22 @@ function searchApptTable() {
       pending_rows[i].style.display = "table-row";
     }
   }
+}
+
+function todaysPatientRowClicked(tableRow) {
+  var name;
+  var container = document.getElementsByClassName("patient-container")[0];
+
+  var tableData = Array.prototype.slice.call(
+    tableRow.getElementsByTagName("td")
+  );
+
+  tableData.forEach((td) => {
+    if (td.id == "full-name") {
+      name = td.innerHTML;
+    }
+  });
+
+  var name_heading = document.getElementById("name-heading");
+  name_heading.innerText = name;
 }
