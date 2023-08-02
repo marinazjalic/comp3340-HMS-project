@@ -1452,6 +1452,8 @@ input[type="radio"] {
   border: 0;
   margin-left: 10px;
   border-bottom: 1px solid lightgrey;
+  font-family: Avenir;
+  color: #333333;
 }
 
 .top-padding {

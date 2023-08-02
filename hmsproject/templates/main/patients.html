@@ -29,8 +29,8 @@
 
                 <div class = "center-info">
                     <p class = "info-heading">Address</p>
-                    <p class = "info-text">333 Example Dr.</p>
-                    <p class = "info-text">Windsor, ON, Canada</p>
+                    <p class = "info-text" id = "addr_field">333 Example Dr.</p>
+                    <p class = "info-text" id = "patient_city">Windsor, ON, Canada</p>
 
                     <p class = "info-heading">Family Doctor</p>
                     <p class = "info-text" id = "patient-doctor">Dr. Jane Smith</p>
@@ -52,7 +52,7 @@
         <div class = "search-container">
             <div id = "search-bar">
                 <img id = "search-icon" src = "{% static 'img/bootstrap/search.svg' %}" alt="placeholder" width="10px" height="10px">
-                <input class = "search" type = "text" placeholder = "Search Patients...">
+                <input class = "search" id = "search-input" type = "text" placeholder = "Search Patients...">
             </div>
         </div>
 
@@ -168,8 +168,8 @@
                             <label for = "fname">Address</label>
                             <input class = "long-input" type = "text" id = "address" name = "address">
     
-                            <label for = "fname">City</label>
-                            <input class = "long-input" type = "text" id = "city" name = "city">
+                            <label for = "patientcity">City</label>
+                            <input class = "long-input" type = "text" id = "patientcity" name = "patientcity">
     
     
                             <label for = "fname">Additional Comments</label>
