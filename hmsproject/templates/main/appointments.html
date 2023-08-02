@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'partials/header.html' %}
+{% include 'partials/sidebar.html' %}
+<div class = "appt-container-left">
+    <div class = "upper-container">
+        <h3 class = "page-title">Manage Appointments</h3></h1>
+        <div class = "filter-container">
+            <div id = "search-bar">
+                    <img id = "search-icon" src = "{% static 'img/bootstrap/search.svg' %}" alt="placeholder" width="10px" height="10px">
+                    <input class = "search" type = "text" placeholder = "Search Patients...">
+            </div>
+            <div id = "search-bar">
+                    <img id = "search-icon" src = "{% static 'img/bootstrap/plain-calendar.svg' %}" alt="placeholder" width="10px" height="10px">
+                    <input class = "search" type = "text" placeholder = "mm/dd/yyyy">
+            </div>
+        </div>
+    </div>
+
+    <div class = "bottom-container">
+        <div class ="appt-table-container">
+            <h3>Upcoming Appointments</h3>
+            <div class = "appt-table-inner">
+                <table class = "table-appt" id = "upcoming-appt">
+                    <tr id = "patient-appt">
+                        <td class = "patient-name">Name</td>
+                        <td class= "appt-reason">Medical Examination</td>
+                        <td class = "appt-date">01/23/23</td>
+                        <td class = "appt-time-small">12:00pm</td>
+                        <td><button class = "cancel-button">CANCEL</button></td>
+                    </tr>
+                    <tr id = "patient-appt">
+                        <td class = "patient-name">Name</td>
+                        <td class= "appt-reason">Medical Examination</td>
+                        <td class = "appt-date">01/23/23</td>
+                        <td class = "appt-time-small">12:00pm</td>
+                        <td><button class = "cancel-button">CANCEL</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class ="appt-table-container">
+            <h3>Pending Appointments</h3>
+            <div class = "appt-table-inner">
+                <table class = "table-appt" id = "pending-appts">
+                    <tr id = "patient-appt">
+                        
+                        <td class = "patient-name">Name1</td>
+                        <td class= "appt-reason">Medical Examination</td>
+                        <td class = "appt-date">01/23/23</td>
+                        <td class = "appt-time-small">12:00pm</td>
+                        <td><button class= "approve-icon"></button></td>
+                        <td><button class= "deny-icon"></button></td>
+                    </tr>
+                    <tr id = "patient-appt">
+                        
+                        <td class = "patient-name">Name2</td>
+                        <td class= "appt-reason">Medical Examination</td>
+                        <td class = "appt-date">01/23/23</td>
+                        <td class = "appt-time-small">12:00pm</td>
+                        <td><button class= "approve-icon"></button></td>
+                        <td><button class= "deny-icon"></button></td>
+                    </tr>
+                    <tr id = "patient-appt">
+                        
+                        <td class = "patient-name">Name3</td>
+                        <td class= "appt-reason">Medical Examination</td>
+                        <td class = "appt-date">01/23/23</td>
+                        <td class = "appt-time-small">12:00pm</td>
+                        <td><button class= "approve-icon"></button></td>
+                        <td><button class= "deny-icon"></button></td>
+                    </tr>
+                </table>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %} 

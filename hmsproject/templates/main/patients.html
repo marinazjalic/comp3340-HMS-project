@@ -1,6 +1,176 @@
+{% extends 'base.html' %}
 {% load static %}
-{% include 'partials/header.html' %}
 
 {% block content %}
-<p>Patient Page</p>
-{% endblock %} 
+
+{% include 'partials/header.html' %}
+
+<div class = "main-container">
+    {% include 'partials/sidebar.html' %}
+    <div class = "center-container">
+        <h3 id = "welcome-text">Manage Patients</h3>
+
+        <div class = "patient-table-wrapper">
+            <h3 id = "patient-info-heading">Patient Information</h3>
+            <div class = "patient-table-inner" id = "top-table">
+                <div class = "left-info">
+                    <img id = "profile-pic" src = "{% static 'img/profile-pic.png' %}" alt="placeholder" width="10px" height="10px">
+                    <p id = "name-heading">Patient Name</p>
+
+                    <button class = "contact-btn" id = "call-btn">
+                        <img id = "phone-icon" src = "{% static 'img/bootstrap/phone.svg' %}" alt="placeholder" width="10px" height="10px">
+                        <p class = "contact-text">(226) 333-1234</p>
+                    </button>
+                    <button class = "contact-btn" id = "email-btn">
+                        <img id = "phone-icon" src = "{% static 'img/bootstrap/mail.svg' %}" alt="placeholder" width="10px" height="10px">
+                        <p class = "contact-text">patient@gmail.com</p>
+                    </button>
+                </div>
+
+                <div class = "center-info">
+                    <p class = "info-heading">Address</p>
+                    <p class = "info-text">333 Example Dr.</p>
+                    <p class = "info-text">Windsor, ON, Canada</p>
+
+                    <p class = "info-heading">Family Doctor</p>
+                    <p class = "info-text">Dr. Jane Smith</p>
+                    <p class = "info-text">1111 Tecumseh Rd.</p>
+                    <p class = "info-text">Windsor, ON</p>
+                </div>
+
+                <div class = "right-info">
+                    <p class = "info-heading">Personal Information </p>
+                    <p class = "info-text">D.O.B: </p>
+                    <p class = "info-text">Gender: </p>
+                    <p class = "info-text">Weight: </p>
+                    <p class = "info-text">Age: </p>
+                    <p class = "info-text">Health Card Number: </p>
+                </div>
+                
+
+
+            </div>
+
+        </div>
+
+        <div class = "search-container">
+            <div id = "search-bar">
+                <img id = "search-icon" src = "{% static 'img/bootstrap/search.svg' %}" alt="placeholder" width="10px" height="10px">
+                <input class = "search" type = "text" placeholder = "Search Patients...">
+        </div>
+        </div>
+
+
+        <!-- fill with dummy data and allow searching -->
+        <div class = "patient-table-wrapper">
+            <div class = "patient-table-inner" id = "bottom-table">
+                <table class = "table-appt" id = "all-patients">
+                    <tr class = "patient-table-header">
+                        <th>Name</th>
+                        <th>Last Visit</th>
+                        <th>Family Doctor</th>
+                        <th>D.O.B</th> 
+                    </tr>
+                    <tr class = "patient-info-row">
+                        <td>Name</td>
+                        <td>08/22/22</td>
+                        <td>Dr. Brown</td></tf>
+                        <td>02/19/1999</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+       
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class = "side-container">
+
+        <button id = "import-btn">Import Patient Info</button>
+
+        <div class = "prescription-container">
+
+            <h3 class = "table-heading">Create Prescription</h3>
+            <div class = "patient-inner-container">
+                <form id = "prescription-form">
+                    <div class = "no-borders">
+                        <div class = "one-line">
+                            <label for = "fname">First Name: </label>
+                            <label id = "lname" for = "lname">Last Name: </label>
+                        </div>
+                        <div class = "one-line">
+                            <input type = "text" id = "fname" name = "fname">
+                            <input type = "text" id = "lname" name = "lname">
+                        </div>
+                        <div class = "one-line">
+                            <label for = "bday">D.O.B </label>
+                            <label id = "age" for = "lname">Age: </label>
+                        </div>
+                        <div class = "one-line">
+                            <input type = "text" id = "bday" name = "bday">
+                            <input type = "text" id = "age" name = "age">
+                        </div>
+    
+                        <div class = "top-padding">
+                            <label for = "fname">Health Card Number: </label>
+                            <input class = "long-input" type = "text" id = "healthcard" name = "healthcard">
+    
+                            <label for = "fname">Medication </label>
+                            <input class = "long-input" type = "text" id = "med" name = "med">
+    
+                            <div class = "one-line">
+                                <label for = "fname">Dosage: </label>
+                                <label id = "frequency" for = "lname">Frequency </label>
+                            </div>
+                            <div class = "one-line" id = "padding-btm">
+                                <input type = "text" id = "dosage" name = "dosage">
+                                <input type = "text" id = "freq" name = "freq">
+                            </div>
+                        
+                         
+                                <label for = "fname">Date Signed </label>
+                                <input class = "long-input" type = "text" id = "date" name = "date">
+                                
+    
+                            <label for = "fname">Pickup Location </label>
+                            <input class = "long-input" type = "text" id = "location" name = "location">
+    
+                            <label for = "fname">Address</label>
+                            <input class = "long-input" type = "text" id = "address" name = "address">
+    
+                            <label for = "fname">City</label>
+                            <input class = "long-input" type = "text" id = "city" name = "city">
+    
+    
+                            <label for = "fname">Additional Comments</label>
+                        </div>
+                    </div>
+             
+                    <input id = "prescription-comments" class = "comments" type = "text" id = "comment" name = "comment"> 
+                    <button id = "prescription-btn">Submit Prescription</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}
+
+
