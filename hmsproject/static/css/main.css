@@ -137,7 +137,8 @@ th {
 }
 
 #notes-container {
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   margin-top: 30px;
   height: 45%;
   width: 90%;
@@ -160,6 +161,7 @@ th {
   margin-left: 5%;
   font-family: Avenir;
   font-size: 18px;
+  color: white;
 }
 
 #note-btn {
@@ -244,25 +246,29 @@ th {
 }
 
 #container-1 {
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   margin-left: 5%;
 }
 
 #container-2 {
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
 }
 
 #container-3 {
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   margin-left: 0%;
 }
 
 #container-4 {
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
 }
 
 .container h3 {
-  color: #333333;
+  color: white;
   font-family: Avenir;
   font-weight: bold;
   /* margin: 0;
@@ -292,7 +298,9 @@ th {
   margin-right: 50%;
   font-family: Avenir;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 23px;
+  color: #0099ff;
+  font-weight: 100;
 }
 
 .icon-container {
@@ -435,7 +443,7 @@ th {
   padding-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
-  color: #333333;
+  color: white;
 }
 
 .table-wrapper {
@@ -492,6 +500,8 @@ th {
   display: inline-block;
   height: 12px;
   margin-left: 47%;
+  float: right;
+  padding-right: 1%;
 }
 
 .appt-reason {
@@ -516,7 +526,8 @@ th {
   width: 65%;
   display: inline-block;
   vertical-align: top;
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
   margin-top: 3%;
@@ -529,7 +540,8 @@ th {
   height: 51%;
   margin-top: 3%;
   vertical-align: top;
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
 }
@@ -595,6 +607,7 @@ th {
 @media screen and (max-width: 1070px) {
   #appt-table {
     background-color: blue;
+    /* background-image: linear-gradient(to right, #0099ff, #80d4ff); */
   }
 
   #container-1 {
@@ -938,7 +951,8 @@ input[type="radio"] {
   height: 85%;
   margin-left: 3%;
   width: 45%;
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   border-radius: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: auto;
@@ -950,7 +964,7 @@ input[type="radio"] {
   font-family: Avenir;
   padding-left: 2%;
   margin: 0;
-  color: #333333;
+  color: white;
   margin-bottom: 2%;
   margin-top: 2%;
 }
@@ -964,7 +978,7 @@ input[type="radio"] {
 
 .cancel-button {
   display: inline-block;
-  background-color: red;
+  background-color: grey;
   float: right;
   margin-right: 2%;
   border-radius: 25px;
@@ -993,16 +1007,17 @@ input[type="radio"] {
 .appt-date {
   font-family: Avenir;
   font-size: 10px;
-  color: red;
+  color: #0099ff;
   float: left;
   padding-left: 2%;
   padding-top: 1%;
+  font-weight: 500;
 }
 
 .appt-time-small {
   font-family: Avenir;
   font-size: 10px;
-  color: blue;
+  color: #0099ff;
   float: left;
   padding-top: 1%;
 }
@@ -1010,7 +1025,7 @@ input[type="radio"] {
 .approve-icon {
   width: 22px;
   height: 22px;
-  background-color: lightgreen;
+  background-color: #0099ff;
   outline: none;
   border: none;
   border-radius: 20px;
@@ -1023,13 +1038,17 @@ input[type="radio"] {
 .deny-icon {
   width: 22px;
   height: 22px;
-  background-color: red;
+  background-color: #b3b3b3;
   opacity: 0.8;
   outline: none;
   border: none;
   border-radius: 20px;
   margin-right: 2%;
   background-image: url("/static/img/bootstrap/x-lg.svg");
+}
+
+.deny-icon:hover {
+  color: red;
 }
 
 .req-form {
@@ -1042,6 +1061,8 @@ input[type="radio"] {
   /* margin-left: 10px; */
   border-bottom: 1px solid lightgrey;
   display: inline-block;
+  font-family: Avenir;
+  color: #333333;
 }
 
 .same-line {
@@ -1140,7 +1161,8 @@ input[type="radio"] {
   height: 48%;
   margin-left: 3%;
   width: 100%;
-  background-color: #99d6ff;
+  /* background-color: #99d6ff; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   border-radius: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: auto;
@@ -1165,7 +1187,7 @@ input[type="radio"] {
   padding-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
-  color: #333333;
+  color: white;
 }
 
 #appt-status {
@@ -1255,7 +1277,8 @@ input[type="radio"] {
 }
 
 .patient-table-wrapper {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   height: 30%;
   width: 90%;
   margin-left: 4%;
@@ -1424,7 +1447,8 @@ input[type="radio"] {
 .prescription-container {
   height: 78%;
   width: 90%;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  background-image: linear-gradient(to right, #0099ff, #80d4ff);
   margin-top: 6%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
@@ -1517,4 +1541,5 @@ input[type="radio"] {
   padding-left: 2%;
   padding-top: 1%;
   padding-bottom: 1%;
+  color: white;
 }
