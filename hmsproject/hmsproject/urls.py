@@ -25,10 +25,6 @@ urlpatterns = [
     path('', include('myapp.urls')),
     path('dashboard/', include('myapp.urls')),
     path('patients/', include('myapp.urls')),
-    path('prescriptions/', include('myapp.urls')),
-    # path('appointments/', include('myapp.urls')),
-    
-    
-    
-    # path('signup/', include('myapp.urls')),
+    path('appointments/', include('myapp.urls')),
+    path('patientView/', include('myapp.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

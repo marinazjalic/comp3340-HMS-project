@@ -67,9 +67,9 @@
             <div class = "table-container">
                     <h3>Today's Appointments</h3>
 
-                    <!-- need to load all appointments in the DB and sort by todays date -->
+                    <!-- need to load all appointments in the DB and filter by todays date -->
                     <div class = "table-wrapper">
-                        <table id = "table-appt">
+                        <table class = "table-appt">
                             <tr id = "patient-appt">
                                 <td class = "patient-name">Name</td>
                                 <td class = "appt-time">12:00</td>
@@ -110,7 +110,6 @@
 
     <div class = "right-container">
         <div id = "calendar">
-            <!-- <h3>Calendar</h3> -->
             <p>{{cal | safe}}</p>
         </div>
 

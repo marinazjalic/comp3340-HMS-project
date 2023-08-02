@@ -24,9 +24,15 @@ def dashboard(request):
         "current_year": current_year,     
     })
 
-def prescriptions(request):
-    return render(request, "main/prescriptions.html")
-
 def patients(request):
     return render(request, "main/patients.html")
+
+
+def appointments(request):
+    return render(request, "main/appointments.html")
+
+
+def patientView(request):
+    return render(request, "main/patientView.html")
+
 

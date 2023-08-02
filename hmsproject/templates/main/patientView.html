@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% include 'partials/header.html' %}
+
+{% block content %}
+
+<div class= "header-toolbar"> 
+    <a id = "header-logout" href = "/">
+        <img src = "{% static 'img/bootstrap/logout-white.svg' %}" alt="placeholder" width="10px" height="10px">
+        <p id = "logout-link"> Logout</p></a>
+</div>
+
+    <h3 id = "welcome-text">Welcome, name! </h3>
+
+    <div class = "main-container">
+        <div class = "appt-table-container">
+            <h3>Request an Appointment</h3>
+            <div class = "appt-table-inner">
+                <form class = "req-form">
+                    <div class = "upper-form">
+                        <div class = "one-line">
+                            <label for = "fname">First Name: </label>
+                            <label id = "name" for = "lname">Last Name: </label>
+                        </div>
+                        <div class = "one-line">
+                            <input type = "text" id = "fname" name = "fname">
+                            <input type = "text" id = "lname" name = "lname">
+                        </div>
+                        <div class = "one-line">
+                            <label for = "staddr">Address: </label>
+                            <label id = "city" for = "city">City: </label>
+                        </div>
+                        <div class = "one-line">
+                            <input class = "medium" type = "text" id = "straddr" name = "straddr">
+                            <input class = "medium" type = "text" id = "city" name = "city">
+                        </div>
+                        <label class = "bday" for = "bday">D.O.B: </label>
+                        <input class = "full-width" type = "text" id = "bday" name = "bday">
+
+                        <label for = "healthcard">Health Card Number: </label>
+                        <input class = "full-width" type = "text" id = "healthcard" name = "healthcard">
+            
+                        <label for = "phone">Phone: </label>
+                        <input class = "full-width" type = "text" id = "phone" name = "phone">
+            
+                        <label for = "email">Email: </label>
+                        <input class = "full-width" type = "text" id = "email" name = "email">
+            
+                        <label for = "doctor">Doctor Name: </label>
+                        <input class = "full-width" type = "text" id = "doctor" name = "doctor"> 
+            
+                        <div class = "one-line">
+                            <label for = "appt-time">Appointment Time: </label>
+                            <label id = "form-date" for = "appt-date">Appointment Date: </label>
+                        </div>
+                        <div class = "one-line" id = "add-padding">        
+                            <input class = "medium" type = "text" id = "appt-time" name = "appt-time"> 
+                            <input class = "medium" type = "text" id = "appt-date" name = "appt-date"> 
+                        </div>
+                        <label for = "reason">Appointment Reason: </label>
+                        <input class = "full-width" type = "text" id = "reason" name = "reason"> 
+                        <label for = "comment">Additional Comments: </label>
+                    </div>
+                    <input class = "comments" type = "text" id = "comment" name = "comment">                     
+                </form>
+                <button id = "req-btn">REQUEST APPOINTMENT</button>
+            </div>
+        </div>
+
+        <div class = "right-tables">
+            <div class = "manage-appt-container">
+                <h3 class = "table-heading">Manage My Appointments</h3>
+                <div class = "appt-table-inner">
+                    <div class = "appt-table-inner">
+                        <table class = "table-appt" id = "manage-appts">
+                            <tr class = "manage-appt-row"> 
+                                <td class= "appt-reason">Medical Examination</td>
+                                <td class = "appt-date">01/23/23</td>
+                                <td class = "appt-time-small">12:00pm</td>
+                                <td class = "approved" id = "appt-status">Approved</td>
+                            </tr>
+                            <tr class = "manage-appt-row"> 
+                                <td class= "appt-reason">Medical Examination</td>
+                                <td class = "appt-date">01/23/23</td>
+                                <td class = "appt-time-small">12:00pm</td>
+                                <td class = "approved" id = "appt-status">Approved</td>
+                            </tr>
+                            <tr class = "manage-appt-row"> 
+                                <td class= "appt-reason">Medical Examination</td>
+                                <td class = "appt-date">01/23/23</td>
+                                <td class = "appt-time-small">12:00pm</td>
+                                <td class = "denied" id = "appt-status">Denied</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class = "manage-appt-container">
+                <h3 class = "table-heading">Manage My Prescriptions</h3>
+                <div class = "appt-table-inner">
+                    <div class = "appt-table-inner">
+                        <table class = "table-appt" id = "manage-appts">
+                            <tr class = "manage-appt-row"> 
+                                <td class= "pres-name">Amoxicillan (500mg)</td>
+                                <td class = "appt-date" id = "grey">08/04/23</td>
+                                <td id = "pres-status">Awaiting pickup</td>
+                            </tr>
+                            <tr class = "manage-appt-row"> 
+                                <td class= "pres-name">Cephalexin (500mg)</td>
+                                <td class = "appt-date" id = "grey">02/11/23</td>
+                                <td id = "pres-status">Received</td>
+                            </tr>
+                            <tr class = "manage-appt-row"> 
+                                <td class= "pres-name">Ibuprophen (800mg)</td>
+                                <td class = "appt-date" id = "grey">12/15/22</td>
+                                <td id = "pres-status">Received</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %} 

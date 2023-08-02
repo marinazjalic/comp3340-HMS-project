@@ -1,16 +1,54 @@
 var toggled = false;
-var linkIds = ["link1", "link2", "link3", "link4"];
+var linkIds = ["link1", "link2", "link3"];
+
+var currentPath = ""; //init to empty str
 
 var registerSelected = true;
+var patientLogin = true;
 
-// window.onload = function (e) {
-//   var button = document.getElementById("register-btn");
-//   var login_btn = document.getElementById("signin-btn");
-//   var note_btn = document.getElementById("note-btn");
-//   button.addEventListener("click", clickRegisterBtn);
-//   login_btn.addEventListener("click", clickSignUpBtn);
-//   note_btn.addEventListener("click", addNewNote);
-// };
+window.onload = function (e) {
+  currentPath = window.location.pathname;
+  //   var button = document.getElementById("register-btn");
+  //   var login_btn = document.getElementById("signin-btn");
+  //   var note_btn = document.getElementById("note-btn");
+  //   button.addEventListener("click", clickRegisterBtn);
+  //   login_btn.addEventListener("click", clickSignUpBtn);
+  //   note_btn.addEventListener("click", addNewNote);
+
+  if (currentPath == "/appointments/") {
+    var denyButtons = Array.prototype.slice.call(
+      document.getElementsByClassName("deny-icon")
+    );
+    var approveButtons = Array.prototype.slice.call(
+      document.getElementsByClassName("approve-icon")
+    );
+    var cancelButtons = Array.prototype.slice.call(
+      document.getElementsByClassName("cancel-button")
+    );
+
+    denyButtons.forEach((button) => {
+      button.addEventListener("click", denyAppointment);
+    });
+
+    approveButtons.forEach((button) => {
+      button.addEventListener("click", confirmAppointment);
+    });
+
+    cancelButtons.forEach((button) => {
+      button.addEventListener("click", cancelAppointment);
+    });
+  }
+
+  if (currentPath == "/patientView/") {
+    var request_btn = document.getElementById("req-btn");
+    request_btn.addEventListener("click", requestAppointment);
+  }
+
+  if (currentPath == "/") {
+    var register_btn = document.getElementById("signup-btn");
+    register_btn.addEventListener("click", launchViewByRole);
+  }
+};
 
 function openNav() {
   var menu = document.getElementsByClassName("sidebar-container")[0];
@@ -69,7 +107,7 @@ function clickSignUpBtn() {
   button.style.fontWeight = "bold";
   button.style.borderBottom = "2px solid #0099ff";
   var signupBtn = document.getElementById("signup-btn");
-  signupBtn.style.marginTop = "60%";
+  signupBtn.style.marginTop = "2%";
   signupBtn.textContent = "Sign In";
   var form = document.getElementsByClassName("optional")[0];
 
@@ -84,7 +122,6 @@ function resetButtonStyle(resetBtn) {
 }
 
 function addNewNote() {
-  console.log("reached");
   var table = document.getElementById("notes-table");
   var form = document.getElementById("note-input");
   var formRow = document.getElementById("form-row");
@@ -93,7 +130,6 @@ function addNewNote() {
 }
 
 function focusOutFunc() {
-  console.log("focus out");
   var table = document.getElementById("notes-table");
   var form = document.getElementById("note-input");
 
@@ -113,9 +149,115 @@ function patientSelected() {
     var form = document.getElementsByClassName("optional")[0];
     form.style.display = "inline-block";
   }
+  patientLogin = true;
 }
 
 function doctorSelected() {
   var form = document.getElementsByClassName("optional")[0];
   form.style.display = "none";
+
+  patientLogin = false;
+}
+
+function denyAppointment() {
+  var rowIndex = event.target.parentNode.parentNode.rowIndex;
+  document.getElementById("pending-appts").deleteRow(rowIndex);
+}
+
+function confirmAppointment() {
+  var name, date, time, reason;
+  var rowInfo = event.target.parentNode.parentNode;
+  var tableData = Array.prototype.slice.call(
+    rowInfo.getElementsByTagName("td")
+  );
+
+  //get all values from the row
+  tableData.forEach((td) => {
+    if (td.className == "patient-name") {
+      name = td.innerHTML;
+    }
+
+    if (td.className == "appt-reason") {
+      reason = td.innerHTML;
+    }
+
+    if (td.className == "appt-date") {
+      date = td.innerHTML;
+    }
+
+    if (td.className == "appt-time-small") {
+      time = td.innerHTML;
+    }
+  });
+
+  //insert row into upcoming appts table
+  var table = document.getElementById("upcoming-appt");
+  var rowToInsert = table.insertRow(0);
+  rowToInsert.id = "patient-appt";
+
+  var cell5 = rowToInsert.insertCell(0);
+  var cell4 = rowToInsert.insertCell(0);
+  var cell3 = rowToInsert.insertCell(0);
+  var cell2 = rowToInsert.insertCell(0);
+
+  var cell1 = rowToInsert.insertCell(0);
+
+  var cancelBtn = document.createElement("BUTTON");
+  var buttonText = document.createTextNode("CANCEL");
+  cancelBtn.appendChild(buttonText);
+
+  cell1.className = "patient-name";
+  cell2.className = "appt-reason";
+  cell3.className = "appt-date";
+  cell4.className = "appt-time-small";
+  cancelBtn.className = "cancel-button";
+  cancelBtn.addEventListener("click", cancelAppointment);
+
+  cell1.innerHTML = name;
+  cell2.innerHTML = reason;
+  cell3.innerHTML = date;
+  cell4.innerHTML = time;
+  cell5.appendChild(cancelBtn);
+
+  //delete row from pending appt table
+  document.getElementById("pending-appts").deleteRow(rowInfo.rowIndex);
+}
+
+function cancelAppointment() {
+  var rowIndex = event.target.parentNode.parentNode.rowIndex;
+  document.getElementById("upcoming-appt").deleteRow(rowIndex);
+}
+
+function requestAppointment() {
+  var reason = document.getElementById("reason").value;
+  var date = document.getElementById("appt-date").value;
+  var time = document.getElementById("appt-time").value;
+
+  //insert row into manage appt table
+  var table = document.getElementById("manage-appts");
+  var rowToInsert = table.insertRow(0);
+  rowToInsert.id = "manage-appt-row";
+
+  var cell4 = rowToInsert.insertCell(0);
+  var cell3 = rowToInsert.insertCell(0);
+  var cell2 = rowToInsert.insertCell(0);
+  var cell1 = rowToInsert.insertCell(0);
+
+  cell1.className = "appt-reason";
+  cell2.className = "appt-date";
+  cell3.className = "appt-time-small";
+  cell4.id = "appt-status";
+
+  cell1.innerHTML = reason;
+  cell2.innerHTML = date;
+  cell3.innerHTML = time;
+  cell4.innerHTML = "Pending";
+}
+
+function launchViewByRole() {
+  if (patientLogin) {
+    window.location = "/patientView";
+  } else {
+    window.location = "/dashboard";
+  }
 }
